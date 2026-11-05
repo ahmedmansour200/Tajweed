@@ -1,0 +1,1854 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset=utf8>
+  <meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <style>
+    :root {
+      color-scheme: light;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+
+    html {
+      scroll-padding-top: env(safe-area-inset-top, 0px)
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font: 14px -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      color: #000
+    }
+
+    img {
+      max-width: 100%
+    }
+
+    [hidden]:not([hidden=until-found i]) {
+      display: none !important
+    }
+  </style>
+</head>
+
+<body>
+  <title>ملخص أحكام النون والميم</title>
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+  <style>
+    /* Layout: sticky section nav, one band per chapter, rule cards with definition list + example tables, letter finder after the four noon rules */
+    :root {
+      --bg: #EEF2F5;
+      --surface: #FFFFFF;
+      --fg: #13222D;
+      --muted: #546775;
+      --line: #D6DEE4;
+      --accent: #0E5E73;
+      --accent-soft: #DCEBF0;
+      --izhar: #2563A8;
+      --izhar-bg: #E3EDF8;
+      --idgham: #23794B;
+      --idgham-bg: #DFF1E7;
+      --iqlab: #A8620A;
+      --iqlab-bg: #F8EBD6;
+      --ikhfa: #7141A8;
+      --ikhfa-bg: #EBE1F6;
+      --font-display: 'Amiri', 'Traditional Arabic', serif;
+      --font-body: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0D171E;
+        --surface: #15232D;
+        --fg: #E6EEF3;
+        --muted: #9CB0BD;
+        --line: #294050;
+        --accent: #5CC0D6;
+        --accent-soft: #16333D;
+        --izhar: #7DB2EB;
+        --izhar-bg: #16283A;
+        --idgham: #6FCB97;
+        --idgham-bg: #13301F;
+        --iqlab: #EBB35E;
+        --iqlab-bg: #35260F;
+        --ikhfa: #BE97EE;
+        --ikhfa-bg: #2A1D3E;
+        color-scheme: dark
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #0D171E;
+      --surface: #15232D;
+      --fg: #E6EEF3;
+      --muted: #9CB0BD;
+      --line: #294050;
+      --accent: #5CC0D6;
+      --accent-soft: #16333D;
+      --izhar: #7DB2EB;
+      --izhar-bg: #16283A;
+      --idgham: #6FCB97;
+      --idgham-bg: #13301F;
+      --iqlab: #EBB35E;
+      --iqlab-bg: #35260F;
+      --ikhfa: #BE97EE;
+      --ikhfa-bg: #2A1D3E;
+      color-scheme: dark
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 72px
+    }
+
+    body {
+      direction: rtl;
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.85;
+      padding-left: max(16px, env(safe-area-inset-left, 0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px));
+      padding-block: 0 56px
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0 0 auto;
+      height: env(safe-area-inset-top, 0px);
+      z-index: 10;
+      background: var(--surface)
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-body);
+      text-wrap: balance;
+      line-height: 1.4;
+      margin: 0
+    }
+
+    p {
+      margin: 0
+    }
+
+    .q {
+      font-family: var(--font-display);
+      font-size: 1.35em;
+      line-height: 1.9
+    }
+
+    nav {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      z-index: 9;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      margin-inline: calc(-1*max(16px, env(safe-area-inset-right, 0px))) calc(-1*max(16px, env(safe-area-inset-left, 0px)));
+      padding-inline: max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-left, 0px))
+    }
+
+    nav .wrap {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-block: 8px
+    }
+
+    nav a {
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 14px;
+      padding: 6px 14px;
+      border-radius: 999px
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      background: var(--accent-soft);
+      color: var(--accent);
+      outline: none
+    }
+
+    .top {
+      padding-block: 36px 8px
+    }
+
+    .top .tag {
+      font-size: 13px;
+      letter-spacing: .04em;
+      color: var(--accent);
+      font-weight: 600
+    }
+
+    .top h1 {
+      font-size: clamp(28px, 6vw, 44px);
+      font-weight: 600;
+      margin-top: 6px
+    }
+
+    .top p {
+      color: var(--muted);
+      max-width: 62ch;
+      margin-top: 10px
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.7
+    }
+
+    .pill b {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700
+    }
+
+    .t-izhar {
+      background: var(--izhar-bg);
+      color: var(--izhar)
+    }
+
+    .t-idgham {
+      background: var(--idgham-bg);
+      color: var(--idgham)
+    }
+
+    .t-iqlab {
+      background: var(--iqlab-bg);
+      color: var(--iqlab)
+    }
+
+    .t-ikhfa {
+      background: var(--ikhfa-bg);
+      color: var(--ikhfa)
+    }
+
+    section.chap {
+      padding-top: 44px
+    }
+
+    .chap>h2 {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: 600
+    }
+
+    .chap>.lead {
+      color: var(--muted);
+      margin-top: 6px;
+      max-width: 68ch
+    }
+
+    .num {
+      display: inline-block;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px
+    }
+
+    .sec {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 32px
+    }
+
+    .box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 20px;
+      min-width: 0
+    }
+
+    .defs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 20px
+    }
+
+    .defs h3 {
+      font-size: 16px;
+      color: var(--accent)
+    }
+
+    .defs p {
+      margin-top: 6px
+    }
+
+    .rule {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin-top: 20px;
+      overflow: hidden;
+      min-width: 0
+    }
+
+    .rule>header {
+      padding: 16px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 14px
+    }
+
+    .rule>header h3 {
+      font-size: 20px;
+      font-weight: 600
+    }
+
+    .rule>header .tagline {
+      margin-inline-start: auto;
+      font-size: 13px;
+      font-weight: 600
+    }
+
+    .rule .body {
+      padding: 6px 20px 20px;
+      display: grid;
+      gap: 18px;
+      min-width: 0
+    }
+
+    .rule dl {
+      margin: 0;
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 6px 18px;
+      align-items: baseline
+    }
+
+    .rule dt {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500
+    }
+
+    .rule dd {
+      margin: 0;
+      min-width: 0
+    }
+
+    @media (max-width:560px) {
+      .rule dl {
+        grid-template-columns: 1fr;
+        gap: 0
+      }
+
+      .rule dt {
+        margin-top: 10px
+      }
+
+      /* Nav: smaller pills */
+      nav a {
+        font-size: 12px;
+        padding: 5px 10px
+      }
+
+      /* Headings */
+      .chap > h2 {
+        font-size: 20px
+      }
+
+      /* Definition boxes: single column */
+      .defs {
+        grid-template-columns: 1fr
+      }
+
+      /* Sub sections: single column */
+      .sub {
+        grid-template-columns: 1fr
+      }
+
+      /* Steps: single column */
+      .steps {
+        grid-template-columns: 1fr
+      }
+
+      /* Ghunna grid: 2 columns */
+      .ghunna {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      /* Letter tiles: smaller */
+      .lt {
+        font-size: 22px;
+        width: 40px;
+        height: 40px
+      }
+
+      /* Tables: allow horizontal scroll */
+      .tw {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch
+      }
+
+      table {
+        min-width: 420px
+      }
+
+      /* Verse poem: smaller on mobile */
+      .verse-poem {
+        font-size: 1.2em;
+        padding: 10px 12px !important;
+        line-height: 1.9
+      }
+
+      /* Finder grid: more columns */
+      .grid {
+        grid-template-columns: repeat(auto-fill, minmax(44px, 1fr))
+      }
+
+      .grid button {
+        font-size: 22px;
+        height: 44px
+      }
+
+      /* Legend pills wrap nicely */
+      .legend {
+        gap: 6px
+      }
+
+      /* Top section padding */
+      .top {
+        padding-block: 20px 4px
+      }
+    }
+
+    .letters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .lt {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      line-height: 1
+    }
+
+    .ex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .ex span {
+      font-family: var(--font-display);
+      font-size: 24px;
+      line-height: 1.5;
+      padding: 2px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--bg)
+    }
+
+    .sub {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px
+    }
+
+    .sub>div {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 16px;
+      min-width: 0
+    }
+
+    .sub h4 {
+      font-size: 15px;
+      margin-bottom: 6px
+    }
+
+    .note {
+      background: var(--accent-soft);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 15px
+    }
+
+    .note b {
+      color: var(--accent)
+    }
+
+    .ref {
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: var(--muted);
+      display: block;
+      line-height: 1.3;
+      margin-top: -2px;
+      font-weight: 400
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none
+    }
+
+    .steps li {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 15px;
+      min-width: 0
+    }
+
+    .steps li b {
+      display: block;
+      font-size: 13px;
+      color: var(--iqlab);
+      margin-bottom: 2px
+    }
+
+    .tw {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface)
+    }
+
+    .rule .tw {
+      border-radius: 8px;
+      background: var(--bg)
+    }
+
+    .tw.solo {
+      margin-top: 20px
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 560px
+    }
+
+    th,
+    td {
+      padding: 8px 14px;
+      text-align: start;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      font-size: 15px
+    }
+
+    th {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+      background: var(--bg)
+    }
+
+    .rule th {
+      background: var(--surface)
+    }
+
+    tr:last-child td {
+      border-bottom: 0
+    }
+
+    td .q {
+      font-size: 1.1em;
+      line-height: 1.7
+    }
+
+    td.l {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      width: 1%;
+      white-space: nowrap
+    }
+
+    .finder {
+      margin-top: 28px
+    }
+
+    .finder h3 {
+      font-size: 18px
+    }
+
+    .finder .hint {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 2px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
+      gap: 8px;
+      margin-top: 14px
+    }
+
+    .grid button {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      height: 52px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      line-height: 1
+    }
+
+    .grid button[aria-pressed="true"] {
+      border-color: var(--fg)
+    }
+
+    .grid button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px
+    }
+
+    .grid .izhar {
+      background: var(--izhar-bg);
+      color: var(--izhar)
+    }
+
+    .grid .idgham {
+      background: var(--idgham-bg);
+      color: var(--idgham)
+    }
+
+    .grid .iqlab {
+      background: var(--iqlab-bg);
+      color: var(--iqlab)
+    }
+
+    .grid .ikhfa {
+      background: var(--ikhfa-bg);
+      color: var(--ikhfa)
+    }
+
+    #answer {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      align-items: center
+    }
+
+    #answer .big {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1;
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px
+    }
+
+    .ghunna {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 10px
+    }
+
+    .ghunna div {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 14px;
+      background: var(--bg);
+      font-size: 15px
+    }
+
+    .ghunna div span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600
+    }
+
+    footer {
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 72ch
+    }
+
+    @media (max-width:768px) {
+      .defs {
+        grid-template-columns: 1fr
+      }
+
+      .rule > header {
+        gap: 8px 10px
+      }
+
+      section.chap {
+        padding-top: 28px
+      }
+
+      .verse-poem {
+        font-size: 1.3em
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+    }
+
+    .verse {
+      background: var(--surface);
+      border: 1px dashed var(--accent);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 14px;
+      min-width: 0
+    }
+
+    .verse .vh {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      align-items: baseline
+    }
+
+    .verse .vh b {
+      color: var(--accent);
+      font-size: 15px
+    }
+
+    .verse .vh span {
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .verse p {
+      margin-top: 4px;
+      font-size: 15px
+    }
+
+    .verse-poem {
+      font-family: var(--font-display);
+      font-size: 1.55em;
+      line-height: 2.1;
+      text-align: center;
+      margin-top: 14px !important;
+      padding: 14px 20px !important;
+      background: var(--bg);
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      color: var(--fg);
+      letter-spacing: 0.01em;
+    }
+
+    .verse label {
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500
+    }
+
+    .verse textarea {
+      width: 100%;
+      margin-top: 4px;
+      font-family: var(--font-display);
+      font-size: 22px;
+      line-height: 1.8;
+      background: var(--bg);
+      color: var(--fg);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px 12px;
+      resize: vertical;
+      direction: rtl
+    }
+
+    .verse textarea:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 1px
+    }
+  </style>
+
+  <nav aria-label="أقسام الملخص">
+    <div class="wrap">
+      <a href="#noon">النون الساكنة والتنوين</a>
+      <a href="#izhar">الإظهار</a>
+      <a href="#idgham">الإدغام</a>
+      <a href="#iqlab">الإقلاب</a>
+      <a href="#ikhfa">الإخفاء</a>
+      <a href="#shadda">النون والميم المشددتان</a>
+      <a href="#meem">الميم الساكنة</a>
+      <a href="#compare">جدول المراجعة</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <div class="top">
+      <div class="tag">غاية المريد في علم التجويد · ملخص للمراجعة</div>
+      <h1>أحكام النون والميم</h1>
+      <p>ملخص مبني على صفحات الكتاب (ص ٥٢ إلى ٧٣): تعريفات كل حكم، وحروفه، وسبب تسميته وسببه، وكيفيته ومراتبه، وجداول
+        الأمثلة.</p>
+      <div class="legend" aria-label="ألوان الأحكام">
+        <span class="pill t-izhar"><b>ظ</b>إظهار</span>
+        <span class="pill t-idgham"><b>د</b>إدغام</span>
+        <span class="pill t-iqlab"><b>ق</b>إقلاب</span>
+        <span class="pill t-ikhfa"><b>خ</b>إخفاء</span>
+      </div>
+    </div>
+
+    <!-- ============ الباب الأول ============ -->
+    <section class="chap" id="noon">
+      <span class="num">الباب الأول</span>
+      <h2>أحكام النون الساكنة والتنوين</h2>
+
+      <div class="defs">
+        <div class="box">
+          <h3>تعريف النون الساكنة</h3>
+          <p>هي النون الخالية من الحركة، الثابتة لفظًا وخطًا ووصلًا ووقفًا. تكون في الأسماء والأفعال والحروف، وتكون
+            متوسطة ومتطرفة.</p>
+          <p style="margin-top:6px">وتكون <b>أصلية</b> من بنية الكلمة مثل <span class="q">أَنْعَمْتَ</span>، وتكون
+            <b>زائدة</b> عن أصل الكلمة وبنيتها مثل <span class="q">فَانْفَلَقَ</span> (أصل الفعل: فلق، على وزن فعل).
+          </p>
+        </div>
+        <div class="box">
+          <h3>تعريف التنوين</h3>
+          <p>نون ساكنة زائدة تلحق آخر الاسم لفظًا ووصلًا، وتفارقه خطًا ووقفًا. وعلامته: فتحتان أو كسرتان أو ضمتان.</p>
+          <p style="margin-top:6px"><b>حكمه عند الوقف:</b> تبدل الفتحتان ألفًا دائمًا إلا إذا كانتا على تاء التأنيث
+            (هاء) فيوقف عليها بالهاء من غير تنوين. أما الضمتان والكسرتان فيحذف التنوين فيهما ويوقف بالسكون. ويستثنى
+            <span class="q">وَكَأَيِّنْ</span> لأنها كُتبت بالنون.
+          </p>
+        </div>
+      </div>
+
+      <h3 class="sec">الفرق بين النون الساكنة والتنوين</h3>
+      <div class="tw solo">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>النون الساكنة</th>
+              <th>التنوين</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>١. الأصالة</td>
+              <td>حرف أصلي من حروف الهجاء، وقد تكون من الحروف الزوائد</td>
+              <td>زائد عن بنية الكلمة دائمًا</td>
+            </tr>
+            <tr>
+              <td>٢. اللفظ والخط</td>
+              <td>ثابتة في اللفظ وفي الخط</td>
+              <td>ثابت في اللفظ دون الخط</td>
+            </tr>
+            <tr>
+              <td>٣. الوصل والوقف</td>
+              <td>ثابتة في الوصل والوقف</td>
+              <td>ثابت في الوصل دون الوقف</td>
+            </tr>
+            <tr>
+              <td>٤. موضعها</td>
+              <td>توجد في الأسماء والأفعال والحروف</td>
+              <td>لا يوجد إلا في الأسماء فقط</td>
+            </tr>
+            <tr>
+              <td>٥. موقعها من الكلمة</td>
+              <td>تكون متوسطة ومتطرفة</td>
+              <td>لا يكون إلا متطرفًا</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note" style="margin-top:12px"><b>استثناء من الفرق الرابع:</b> نون التوكيد الخفيفة التي لم تقع إلا في
+        موضعين، وتُكتب مثل التنوين وتعمل عمله وقفًا، فهي نون ساكنة تشبه التنوين:
+        <span class="q">وَلَيَكُونًا مِنَ الصَّاغِرِينَ</span> (يوسف ٣٢) و<span class="q">لَنَسْفَعًا
+          بِالنَّاصِيَةِ</span> (العلق ١٥).
+      </div>
+
+      <p style="margin-top:14px">ولهما أربعة أحكام: <b>الإظهار، الإدغام، الإقلاب، الإخفاء</b>.</p>
+
+      <!-- ===== الإظهار ===== -->
+      <div class="verse" id="v-noon">
+        <div class="vh"><b>البيت ٦</b><span>متن التحفة للجمزوري · ص ٥٢</span></div>
+        <p>يلخص البيت الأحكام الأربعة للتنوين والنون الساكنة بالترتيب: الإظهار، الإدغام، الإقلاب، الإخفاء، ويحيل التفصيل
+          إلى ما بعده.</p>
+        <p class="q verse-poem">
+          لِلنُّونِ إِنْ تَسْكُنْ وَلِلتَّنْوِينِ ... أَرْبَعُ أَحْكَامٍ فَخُذْ تَبْيِينِي</p>
+      </div>
+
+      <article class="rule" id="izhar">
+        <header class="t-izhar">
+          <h3>الحكم الأول: الإظهار الحلقي</h3>
+          <span class="tagline">بلا غنة كاملة</span>
+        </header>
+        <div class="body">
+          <dl>
+            <dt>التعريف</dt>
+            <dd>الإظهار لغة: البيان والإيضاح. واصطلاحًا: إخراج الحرف المظهر من مخرجه من غير غنة كاملة. والحرف المظهر هو
+              النون الساكنة والتنوين الواقعان قبل أحرف الإظهار.</dd>
+            <dt>حروفه (٦)</dt>
+            <dd>
+              <div class="letters"><span class="lt t-izhar">ء</span><span class="lt t-izhar">هـ</span><span
+                  class="lt t-izhar">ع</span><span class="lt t-izhar">ح</span><span class="lt t-izhar">غ</span><span
+                  class="lt t-izhar">خ</span></div>
+              <p style="margin-top:8px">إذا وقع حرف منها بعد النون الساكنة، في كلمة أو كلمتين، أو بعد التنوين ولا يكون
+                إلا من كلمتين، وجب الإظهار.</p>
+            </dd>
+            <dt>وجه التسمية</dt>
+            <dd><b>إظهار:</b> لظهور النون والتنوين عند ملاقاة أحد هذه الحروف. <b>حلقي:</b> لأن حروفه الستة تخرج من
+              الحلق.</dd>
+            <dt>سببه</dt>
+            <dd>النون والتنوين يخرجان من طرف اللسان، والحروف الستة من الحلق. وليس بينهما تقارب أو تجانس يوجب الإدغام أو
+              الإخفاء، فتعين الإظهار.</dd>
+            <dt>حقيقته</dt>
+            <dd>أن تنطق بالنون الساكنة أو التنوين واضحًا من غير غنة كاملة، ثم تنطق بحرف الإظهار من غير فصل ولا سكت
+              بينهما. والمقصود بنفي الغنة أنها غير ظاهرة، فأصل الغنة يبقى صفة لازمة للنون المظهرة.</dd>
+            <dt>مراتبه (٣)</dt>
+            <dd>
+              <div class="ex"><span>عليا: الهمزة والهاء</span><span>وسطى: العين والحاء</span><span>دنيا: الغين
+                  والخاء</span></div>
+            </dd>
+          </dl>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>الحرف</th>
+                  <th>مع النون من كلمة</th>
+                  <th>مع النون من كلمتين</th>
+                  <th>مع التنوين</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="l t-izhar">ء</td>
+                  <td><span class="q">يَنْأَوْنَ</span><span class="ref">الأنعام ٢٦</span></td>
+                  <td><span class="q">مَنْ أَعْطَى</span><span class="ref">الليل ٥</span></td>
+                  <td><span class="q">كِتَابٌ أَنْزَلْنَاهُ</span><span class="ref">إبراهيم ١</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-izhar">هـ</td>
+                  <td><span class="q">يَنْهَوْنَ</span><span class="ref">الأنعام ٢٦</span></td>
+                  <td><span class="q">مَنْ هَاجَرَ</span><span class="ref">الحشر ٩</span></td>
+                  <td><span class="q">جُرُفٍ هَارٍ</span><span class="ref">التوبة ١٠٩</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-izhar">ع</td>
+                  <td><span class="q">الْأَنْعَامِ</span><span class="ref">النحل ٥</span></td>
+                  <td><span class="q">مِنْ عَلَقٍ</span><span class="ref">العلق ٢</span></td>
+                  <td><span class="q">وَاسِعٌ عَلِيمٌ</span><span class="ref">المائدة ٥٤</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-izhar">ح</td>
+                  <td><span class="q">يَنْحِتُونَ</span><span class="ref">الحجر ٨٢</span></td>
+                  <td><span class="q">مَنْ حَادَّ اللَّهَ</span><span class="ref">المجادلة ٢٢</span></td>
+                  <td><span class="q">عَزِيزٌ حَكِيمٌ</span><span class="ref">البقرة ٢٠٩</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-izhar">غ</td>
+                  <td><span class="q">فَسَيُنْغِضُونَ</span><span class="ref">الإسراء ٥١</span></td>
+                  <td><span class="q">مِنْ غِسْلِينٍ</span><span class="ref">الحاقة ٣٦</span></td>
+                  <td><span class="q">قَوْلًا غَيْرَ</span><span class="ref">البقرة ٥٩</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-izhar">خ</td>
+                  <td><span class="q">الْمُنْخَنِقَةُ</span><span class="ref">المائدة ٣</span></td>
+                  <td><span class="q">مَنْ خَشِيَ</span><span class="ref">ق ٣٣</span></td>
+                  <td><span class="q">لَطِيفٌ خَبِيرٌ</span><span class="ref">الحج ٦٣</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+      <div class="verse" id="v-izhar">
+        <div class="vh"><b>البيتان ٧-٨</b><span>متن التحفة للجمزوري · ص ٥٤</span></div>
+        <p>يقول الجمزوري إن الحكم الأول هو الإظهار قبل ستة أحرف حلقية، ثم يعدّها بالترتيب: الهمزة، الهاء، العين، الحاء
+          المهملة، الغين، الخاء المعجمة.</p>
+        <p class="q verse-poem">
+          فَالْأَوَّلُ الْإِظْهَارُ قَبْلَ أَحْرُفِ ... لِلْحَلْقِ سِتٌّ رُتِّبَتْ فَلْتَعْرِفِ<br>هَمْزٌ فَهَاءٌ ثُمَّ
+          عَيْنٌ حَاءُ ... مُهْمَلَتَانِ ثُمَّ غَيْنٌ خَاءُ</p>
+      </div>
+
+
+      <!-- ===== الإدغام ===== -->
+      <article class="rule" id="idgham">
+        <header class="t-idgham">
+          <h3>الحكم الثاني: الإدغام</h3>
+          <span class="tagline">قسمان: بغنة وبغير غنة</span>
+        </header>
+        <div class="body">
+          <dl>
+            <dt>التعريف</dt>
+            <dd>الإدغام لغة: إدخال الشيء في الشيء، ومنه «أدغمت اللجام في فم الفرس». واصطلاحًا: إدخال حرف ساكن في حرف
+              متحرك بحيث يصيران حرفًا واحدًا مشددًا. وعرّفه ابن الجزري بأنه النطق بالحرفين حرفًا كالثاني مشددًا.</dd>
+            <dt>حروفه (٦)</dt>
+            <dd>
+              <div class="letters"><span class="lt t-idgham">ي</span><span class="lt t-idgham">ر</span><span
+                  class="lt t-idgham">م</span><span class="lt t-idgham">ل</span><span class="lt t-idgham">و</span><span
+                  class="lt t-idgham">ن</span></div>
+              <p style="margin-top:8px">مجموعة في كلمة <b>«يرملون»</b>.</p>
+            </dd>
+          </dl>
+
+          <div class="sub">
+            <div>
+              <h4 style="color:var(--idgham)">إدغام بغنة: حروف «ينمو» (٤)</h4>
+              <p>بشرط أن تكون النون في آخر الكلمة الأولى وحرف الإدغام في أول الكلمة التالية، أو بعد التنوين ولا يكون إلا
+                من كلمتين، أو بعد نون ملحقة بالتنوين وهي <span class="q">وَلَيَكُونًا مِنَ الصَّاغِرِينَ</span> خاصة.
+              </p>
+            </div>
+            <div>
+              <h4 style="color:var(--idgham)">إدغام بغير غنة: اللام والراء (٢)</h4>
+              <p>لا يكون إلا من كلمتين. ويستثنى <span class="q">مَنْ رَاقٍ</span> (القيامة ٢٧) لوجوب السكت فيها، فلا
+                إدغام. وسبب حذف الغنة المبالغة في التخفيف لأن بقاءها فيه ثقل.</p>
+            </div>
+          </div>
+
+          <div class="note"><b>إذا اجتمعت النون وحرف الإدغام في كلمة واحدة</b> وجب الإظهار، ويسمى <b>إظهارًا مطلقًا</b>
+            لعدم تقييده بحلقي أو شفوي أو قمري. ولا يقع إلا عند الياء والواو، ولم يقع في القرآن إلا في أربع كلمات:
+            <span class="q">الدُّنْيَا · بُنْيَانٌ · صِنْوَانٌ · قِنْوَانٌ</span>. وسبب الإظهار أن لا تلتبس الكلمة
+            بالمضاعف لو أُدغمت، وللمحافظة على وضوح المعنى.
+          </div>
+
+          <div class="note"><b>مواضع الإظهار على خلاف القاعدة (رواية حفص):</b> في <span class="q">يس وَالْقُرْآنِ</span>
+            و<span class="q">ن وَالْقَلَمِ</span> تظهر النون مع الواو، مراعاة للانفصال الحكمي لأن كل حرف منهما اسم
+            للسورة. وفي <span class="q">طسم</span> أول الشعراء والقصص تدغم النون في الميم عند حفص.</div>
+
+          <h4 style="font-size:15px">أمثلة الإدغام بغنة</h4>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>الحرف</th>
+                  <th>مثاله مع النون</th>
+                  <th>مثاله مع التنوين</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="l t-idgham">ي</td>
+                  <td><span class="q">وَمَنْ يُطِعِ اللَّهَ</span><span class="ref">النساء ١٣</span></td>
+                  <td><span class="q">وُجُوهٌ يَوْمَئِذٍ</span><span class="ref">الغاشية ٢</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-idgham">ن</td>
+                  <td><span class="q">لَنْ نَدْخُلَهَا أَبَدًا</span><span class="ref">المائدة ٢٤</span></td>
+                  <td><span class="q">أَمْشَاجٍ نَبْتَلِيهِ</span><span class="ref">الإنسان ٢</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-idgham">م</td>
+                  <td><span class="q">مِنْ مَاءٍ دَافِقٍ</span><span class="ref">الطارق ٦</span></td>
+                  <td><span class="q">صُحُفًا مُطَهَّرَةً</span><span class="ref">البينة ٢</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-idgham">و</td>
+                  <td><span class="q">مِنْ وَالٍ</span><span class="ref">الرعد ١١</span></td>
+                  <td><span class="q">وَوَالِدٍ وَمَا وَلَدَ</span><span class="ref">البلد ٣</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4 style="font-size:15px">أمثلة الإدغام بغير غنة</h4>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>الحرف</th>
+                  <th>مثاله مع النون</th>
+                  <th>مثاله مع التنوين</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="l t-idgham">ل</td>
+                  <td><span class="q">أَنْ لَنْ تَقُولَ</span><span class="ref">الجن ٥</span></td>
+                  <td><span class="q">مَالًا لُبَدًا</span><span class="ref">البلد ٦</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-idgham">ر</td>
+                  <td><span class="q">مِنْ رَسُولٍ</span><span class="ref">النساء ٦٤</span></td>
+                  <td><span class="q">فِي عِيشَةٍ رَاضِيَةٍ</span><span class="ref">الحاقة ٢١</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4 style="font-size:15px">الإدغام من حيث الكمال والنقصان</h4>
+          <div class="sub">
+            <div>
+              <h4 style="color:var(--idgham)">إدغام كامل</h4>
+              <p>ذهاب ذات الحرف وصفته معًا. يكون عند اللام والراء لكمال التشديد باتفاق العلماء، وعلامته وضع الشدة على
+                المدغم فيه. وقيل: يكون عند أربعة أحرف هي اللام والراء والنون والميم، لأن الغنة عند النون والميم هي غنة
+                المدغم فيه لا غنة النون والتنوين، وعلى هذا جرى ضبط المصاحف بوضع الشدة على الأحرف الأربعة.</p>
+            </div>
+            <div>
+              <h4 style="color:var(--idgham)">إدغام ناقص</h4>
+              <p>ذهاب ذات الحرف وبقاء صفته وهي الغنة، والغنة تمنع كمال التشديد. يكون عند الحروف الباقية. على الرأي
+                الثاني هو عند الياء والواو فقط، ولذلك تُعرّى الواو والياء من الشدة في المصحف. وغنتهما غنة المدغم (النون
+                والتنوين) باتفاق، وفي النون غنة المدغم فيه، وفي الميم خلاف والصحيح أنها غنة المدغم فيه لأن النون
+                والتنوين يقلبان ميمًا عند إدغامهما في الميم.</p>
+            </div>
+          </div>
+
+          <dl>
+            <dt>أسباب الإدغام</dt>
+            <dd>التماثل والتجانس والتقارب. فالتماثل بالنسبة للنون، والتجانس بالنسبة للميم، والتقارب بالنسبة لبقية الحروف
+              الأربعة (على مذهب الخليل وسيبويه). وعلى مذهب الفراء الذي يعدّ المخارج أربعة عشر يكون التجانس مع الميم
+              واللام والراء والنون.</dd>
+            <dt>فائدته</dt>
+            <dd>التخفيف، لأن المدغم والمدغم فيه ينطق بهما حرفًا واحدًا مشددًا.</dd>
+            <dt>تتمة</dt>
+            <dd>إن كان الحرفان متماثلين أدغم الأول في الثاني ولا زيادة، مثل <span class="q">مِنْ نِعْمَةٍ</span>. وإن
+              كانا متقاربين أو متجانسين قُلب الأول حرفًا مماثلًا للثاني ثم أُدغم فيه، كأن تقلب النون ميمًا ثم تدغم في
+              الميم بعدها مثل <span class="q">مِنْ مَاءٍ</span>، أو تقلب لامًا ثم تدغم في اللام مثل <span class="q">مِنْ
+                لَدُنْهُ</span>.</dd>
+          </dl>
+        </div>
+      </article>
+      <div class="verse" id="v-idgham">
+        <div class="vh"><b>البيتان ٩-١٢</b><span>متن التحفة · آخر صفحة الإدغام بعد التتمة</span></div>
+        <p>يذكر البيتان أن الإدغام في ستة أحرف مجموعة في «يرملون»، وأنه قسمان: قسم بغنة في «ينمو»، وقسم بغير غنة في
+          اللام والراء. ويستثنيان ما اجتمع فيه الحرفان في كلمة واحدة فلا يدغم، ويمثلان له بـ«دنيا» و«صنوان».</p>
+        <p class="q verse-poem">
+          وَالثَّانِي إِدْغَامٌ بِسِتَّةٍ أَتَتْ ... فِي يَرْمُلُونَ عِنْدَهُمْ قَدْ ثَبَتَتْ<br>لَكِنَّهَا قِسْمَانِ
+          قِسْمٌ يُدْغَمَا ... فِيهِ بِغُنَّةٍ بِـ (يَنْمُو) عُلِمَا<br>إِلَّا إِذَا كَانَا بِكِلْمَةٍ فَلَا ...
+          تُدْغِمْ كَـ (دُنْيَا) ثُمَّ (صِنْوَانٍ) تَلَا<br>وَالثَّانِي إِدْغَامٌ بِغَيْرِ غُنَّةْ ... فِي اللَّامِ
+          وَالرَّا ثُمَّ كَرِّرَنَّهْ</p>
+      </div>
+
+
+      <!-- ===== الإقلاب ===== -->
+      <article class="rule" id="iqlab">
+        <header class="t-iqlab">
+          <h3>الحكم الثالث: الإقلاب</h3>
+          <span class="tagline">بغنة</span>
+        </header>
+        <div class="body">
+          <dl>
+            <dt>التعريف</dt>
+            <dd>الإقلاب لغة: تحويل الشيء عن وجهه. واصطلاحًا: قلب النون الساكنة أو التنوين ميمًا مخفاة بغنة.</dd>
+            <dt>حرفه (١)</dt>
+            <dd>
+              <div class="letters"><span class="lt t-iqlab">ب</span></div>
+              <p style="margin-top:8px">إذا وقعت الباء بعد النون الساكنة، من كلمة أو كلمتين، أو بعد التنوين ولا يكون إلا
+                من كلمتين، أو بعد نون ملحقة بالتنوين وهي <span class="q">لَنَسْفَعًا بِالنَّاصِيَةِ</span>، وجب الإقلاب.
+              </p>
+            </dd>
+          </dl>
+          <div>
+            <p style="font-weight:600;font-size:15px;margin-bottom:8px">ثلاثة أمور لا بد منها لتحقق الإقلاب</p>
+            <ol class="steps">
+              <li><b>الأول</b>قلب النون الساكنة أو التنوين ميمًا خالصة لفظًا لا خطًا.</li>
+              <li><b>الثاني</b>إخفاء هذه الميم عند الباء.</li>
+              <li><b>الثالث</b>إظهار الغنة مع الإخفاء، وهي صفة الميم المقلوبة لصفة النون والتنوين.</li>
+            </ol>
+          </div>
+          <dl>
+            <dt>علامته</dt>
+            <dd>ميم صغيرة قائمة (م) توضع فوق النون أو التنوين في المصحف.</dd>
+            <dt>تنبيه</dt>
+            <dd>يحترز عند النطق بالإقلاب من كزّ الشفتين على الميم المقلوبة، بل يلزم تسكينها بتلطف من غير ثقل ولا تعسف.
+            </dd>
+            <dt>وجه الإقلاب</dt>
+            <dd>عند ملاقاة النون والتنوين للباء يتعذر الإظهار والإدغام لثقل النطق بسبب اختلاف المخرج، ويصعب الإخفاء لعدم
+              التناسب بين المخرجين. فتُوُصِّل إليه بقلب النون ميمًا ليسهل الإخفاء، لأن الميم تشارك الباء في المخرج وفي
+              صفات الجهر والاستفال والانفتاح والإذلاق، وتشارك النون في الغنة والجهر والتوسط والاستفال والانفتاح
+              والإذلاق.</dd>
+          </dl>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>الحرف</th>
+                  <th>مع النون من كلمة</th>
+                  <th>مع النون من كلمتين</th>
+                  <th>مع التنوين</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="l t-iqlab">ب</td>
+                  <td><span class="q">أَنْبِئُونِي</span><span class="ref">البقرة ٣١</span></td>
+                  <td><span class="q">وَأَمَّا مَنْ بَخِلَ</span><span class="ref">الليل ٨</span></td>
+                  <td><span class="q">سَمِيعٌ بَصِيرٌ</span><span class="ref">الحج ٦١</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+      <div class="verse" id="v-iqlab">
+        <div class="vh"><b>البيت ١٣</b><span>متن التحفة · ص ٦٤</span></div>
+        <p>يذكر البيت أن الحكم الثالث هو الإقلاب عند الباء، فتقلب النون أو التنوين ميمًا مع الغنة مع الإخفاء.</p>
+        <p class="q verse-poem">
+          وَالثَّالِثُ الْإِقْلَابُ عِنْدَ الْبَاءِ ... مِيمًا بِغُنَّةٍ مَعَ الْإِخْفَاءِ</p>
+      </div>
+
+
+      <!-- ===== الإخفاء ===== -->
+      <article class="rule" id="ikhfa">
+        <header class="t-ikhfa">
+          <h3>الحكم الرابع: الإخفاء الحقيقي</h3>
+          <span class="tagline">بغنة</span>
+        </header>
+        <div class="body">
+          <dl>
+            <dt>التعريف</dt>
+            <dd>الإخفاء لغة: الستر. واصطلاحًا: النطق بالحرف بصفة بين الإظهار والإدغام، عاريًا عن التشديد مع بقاء الغنة.
+            </dd>
+            <dt>حروفه (١٥)</dt>
+            <dd>
+              <div class="letters">
+                <span class="lt t-ikhfa">ص</span><span class="lt t-ikhfa">ذ</span><span class="lt t-ikhfa">ث</span><span
+                  class="lt t-ikhfa">ك</span><span class="lt t-ikhfa">ج</span>
+                <span class="lt t-ikhfa">ش</span><span class="lt t-ikhfa">ق</span><span class="lt t-ikhfa">س</span><span
+                  class="lt t-ikhfa">د</span><span class="lt t-ikhfa">ط</span>
+                <span class="lt t-ikhfa">ز</span><span class="lt t-ikhfa">ف</span><span class="lt t-ikhfa">ت</span><span
+                  class="lt t-ikhfa">ض</span><span class="lt t-ikhfa">ظ</span>
+              </div>
+              <p style="margin-top:8px">هي الأحرف الباقية من حروف الهجاء بعد حروف الإظهار والإدغام والإقلاب. إذا وقع حرف
+                منها بعد النون الساكنة من كلمة أو كلمتين، أو بعد التنوين، وجب الإخفاء.</p>
+            </dd>
+            <dt>وجه التسمية</dt>
+            <dd>يسمى <b>حقيقيًا</b> لتحقق الإخفاء فيه أكثر من غيره، ولاتفاق العلماء على تسميته كذلك.</dd>
+            <dt>سببه</dt>
+            <dd>مخرج النون والتنوين لم يقرب من مخرج هذه الحروف فيدغم، ولم يبعد عنه فيظهر. فلما عُدم القرب الموجب للإدغام
+              والبعد الموجب للإظهار، أُعطي حكمًا متوسطًا بين الإظهار والإدغام وهو الإخفاء. ولا عمل للسان في الإخفاء لأن
+              النون والتنوين يخرجان حينئذ من الخيشوم.</dd>
+            <dt>كيفيته</dt>
+            <dd>أن تنطق بالنون الساكنة والتنوين غير مظهرين إظهارًا محضًا ولا مدغمين إدغامًا محضًا، بل بحالة متوسطة عارية
+              عن التشديد مع بقاء الغنة. ويحترز من إلصاق اللسان فوق الثنايا العليا عند إخفاء النون، والحل أن يبعد اللسان
+              قليلًا عن الثنايا العليا عند النطق.</dd>
+          </dl>
+
+          <div class="sub">
+            <div>
+              <h4 style="color:var(--ikhfa)">الفرق بين الإخفاء والإدغام</h4>
+              <p><b>أولًا:</b> لا تشديد في الإخفاء، بخلاف الإدغام.<br><b>ثانيًا:</b> الإخفاء يكون عند الحرف، والإدغام
+                يكون في الحرف.<br><b>ثالثًا:</b> الإخفاء يأتي في كلمة ومن كلمتين، والإدغام لا يكون إلا من كلمتين.</p>
+            </div>
+            <div>
+              <h4 style="color:var(--ikhfa)">مراتب الإخفاء</h4>
+              <p><b>أعلاها:</b> عند الطاء والدال والتاء لقرب مخرجها من النون، فيكون الإخفاء قريبًا من
+                الإدغام.<br><b>أدناها:</b> عند القاف والكاف لبعد مخرجهما، فيكون قريبًا من الإظهار.<br><b>أوسطها:</b> عند
+                الأحرف العشرة الباقية، لا قريب منها جدًا ولا بعيد.</p>
+            </div>
+          </div>
+
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>الحرف</th>
+                  <th>مع النون من كلمة</th>
+                  <th>مع النون من كلمتين</th>
+                  <th>مع التنوين</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="l t-ikhfa">ص</td>
+                  <td><span class="q">يَنْصُرْكُمْ</span></td>
+                  <td><span class="q">مِنْ صَلْصَالٍ</span></td>
+                  <td><span class="q">رِيحًا صَرْصَرًا</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">ذ</td>
+                  <td><span class="q">مُنْذِرٌ</span></td>
+                  <td><span class="q">مَنْ ذَا الَّذِي</span></td>
+                  <td><span class="q">سِرَاعًا ذَلِكَ</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">ث</td>
+                  <td><span class="q">مَنْثُورًا</span></td>
+                  <td><span class="q">فَأَمَّا مَنْ ثَقُلَتْ</span></td>
+                  <td><span class="q">مُطَاعٍ ثَمَّ أَمِينٍ</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">ك</td>
+                  <td><span class="q">يَنْكُثُونَ</span></td>
+                  <td><span class="q">فَمَنْ كَانَ</span></td>
+                  <td><span class="q">كِرَامًا كَاتِبِينَ</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">ج</td>
+                  <td><span class="q">أَنْجَيْنَاكُمْ</span></td>
+                  <td><span class="q">مَنْ جَاءَ</span></td>
+                  <td><span class="q">فَصَبْرٌ جَمِيلٌ</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">ش</td>
+                  <td><span class="q">أَنْشَرَهُ</span></td>
+                  <td><span class="q">إِنْ شَاءَ اللَّهُ</span></td>
+                  <td><span class="q">رَسُولًا شَاهِدًا</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">ق</td>
+                  <td><span class="q">يَنْقَلِبُونَ</span></td>
+                  <td><span class="q">فَإِنْ قَاتَلُوكُمْ</span></td>
+                  <td><span class="q">كُتُبٌ قَيِّمَةٌ</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">س</td>
+                  <td><span class="q">مَا نَنْسَخْ</span></td>
+                  <td><span class="q">مِنْ سُلَالَةٍ</span></td>
+                  <td><span class="q">قَوْلًا سَدِيدًا</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">د</td>
+                  <td><span class="q">أَنْدَادًا</span></td>
+                  <td><span class="q">وَمَنْ دَخَلَهُ</span></td>
+                  <td><span class="q">قِنْوَانٌ دَانِيَةٌ</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">ط</td>
+                  <td><span class="q">يَنْطِقُونَ</span></td>
+                  <td><span class="q">مِنْ طَيِّبَاتِ</span></td>
+                  <td><span class="q">شَرَابًا طَهُورًا</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">ز</td>
+                  <td><span class="q">أَنْزَلْنَاهُ</span></td>
+                  <td><span class="q">مَنْ زَكَّاهَا</span></td>
+                  <td><span class="q">صَعِيدًا زَلَقًا</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">ف</td>
+                  <td><span class="q">فَانْفِرُوا</span></td>
+                  <td><span class="q">مِنْ فَضْلِ اللَّهِ</span></td>
+                  <td><span class="q">شَيْئًا فَرِيًّا</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">ت</td>
+                  <td><span class="q">مُنْتَهُونَ</span></td>
+                  <td><span class="q">وَإِنْ تَصْبِرُوا</span></td>
+                  <td><span class="q">حِلْيَةً تَلْبَسُونَهَا</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">ض</td>
+                  <td><span class="q">مَنْضُودٍ</span></td>
+                  <td><span class="q">مِنْ ضَرِيعٍ</span></td>
+                  <td><span class="q">عَذَابًا ضِعْفًا</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-ikhfa">ظ</td>
+                  <td><span class="q">فَانْظُرْ</span></td>
+                  <td><span class="q">إِنْ ظَنَّا</span></td>
+                  <td><span class="q">قُرًى ظَاهِرَةً</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+      <div class="verse" id="v-ikhfa">
+        <div class="vh"><b>البيتان ١٤-١٥</b><span>متن التحفة · ص ٦٩ ، ولآلئ البيان · ص ٧٠</span></div>
+        <p>في التحفة: الإخفاء واجب عند الحروف الخمسة عشر الباقية، وهي أوائل كلمات بيت يجمعها. وفي لآلئ البيان: بيتان
+          يلخصان الأحكام الأربعة بحروف كل حكم، وأين تظهر الغنة، ودرجة قرب الإخفاء من الإظهار أو الإدغام.</p>
+        <p class="q verse-poem">
+          وَالرَّابِعُ الْإِخْفَاءُ عِنْدَ الْفَاضِلِ ... مِنَ الْحُرُوفِ وَاجِبٌ لِلْفَاضِلِ<br>فِي سِتَّةٍ مِنْ بَعْدِ
+          عَشْرٍ رَمْزُهَا ... فِي كِلْمِ هَذَا الْبَيْتِ قَدْ ضَمَّنْتُهَا<br><span style="font-size:0.85em">صِفْ ذَا
+            ثَنَا كَمْ جَادَ شَخْصٌ قَدْ سَمَا ... دُمْ طَيِّبًا زِدْ فِي تُقًى ضَعْ ظَالِمَا</span></p>
+      </div>
+
+
+      <!-- Finder -->
+      <div class="box finder" id="finder">
+        <h3>أيّ حكم يأتي قبل هذا الحرف؟</h3>
+        <p class="hint">اضغط أي حرف لترى حكم النون الساكنة أو التنوين قبله.</p>
+        <div class="grid" id="grid" role="group" aria-label="حروف الهجاء"></div>
+        <div id="answer" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ============ الباب الثاني ============ -->
+    <section class="chap" id="shadda">
+      <span class="num">الباب الثاني</span>
+      <h2>حكم الميم والنون المشددتين</h2>
+      <p class="lead">الحرف المشدد أصله حرفان: الأول ساكن والثاني متحرك، فيدغم الساكن في المتحرك بحيث يصيران حرفًا
+        واحدًا مشددًا.</p>
+
+      <article class="rule">
+        <header class="t-idgham">
+          <h3>وجوب إظهار الغنة</h3>
+          <span class="tagline">حركتان</span>
+        </header>
+        <div class="body">
+          <dl>
+            <dt>الحكم</dt>
+            <dd>إذا وقعت النون أو الميم مشددة وجب إظهار الغنة فيهما حال النطق بهما. ويسمى كل منهما <b>حرف غنة مشدد</b>،
+              أو حرفًا أغن مشددًا. وقد تكونان متوسطتين أو متطرفتين، في اسم أو فعل أو حرف.</dd>
+            <dt>الغنة</dt>
+            <dd>لغة: صوت له رنين في الخيشوم. واصطلاحًا: صوت لذيذ مركب في جسم النون والميم لا عمل للسان فيه. قيل إنه شبيه
+              بصوت الغزالة إذا ضاع ولدها.</dd>
+            <dt>مخرجها</dt>
+            <dd>الخيشوم، وهو أعلى الأنف وأقصاه من الداخل.</dd>
+            <dt>مقدارها</dt>
+            <dd>حركتان، أي قدر حركة الإصبع قبضًا أو بسطًا.</dd>
+            <dt>كيفية النطق بها</dt>
+            <dd>تابعة لما بعدها تفخيمًا وترقيقًا. فإن كان بعدها حرف استعلاء فُخّمت مثل <span
+                class="q">يَنْطِقُونَ</span>، وإن كان بعدها حرف استفال رُقّقت مثل <span class="q">مَا نَنْسَخْ</span>.
+            </dd>
+          </dl>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>الحرف المشدد</th>
+                  <th>مثال متوسط</th>
+                  <th>مثال متطرف</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="l t-idgham">نّ</td>
+                  <td><span class="q">وَيُمَنِّيهِمْ</span><span class="ref">النساء ١٢٠</span></td>
+                  <td><span class="q">إِنَّ</span><span class="ref">الكوثر ٣</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-idgham">مّ</td>
+                  <td><span class="q">أُمَّتُكُمْ</span><span class="ref">الأنبياء ٩٢</span></td>
+                  <td><span class="q">ثُمَّ</span><span class="ref">التكاثر ٤</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <p style="font-weight:600;font-size:15px;margin-bottom:8px">مراتب الغنة الخمس على المشهور، من الأكمل إلى
+              الأضعف</p>
+            <div class="ghunna">
+              <div><span>١</span>المشدد، والمدغم كامل التشديد</div>
+              <div><span>٢</span>المدغم ناقص التشديد</div>
+              <div><span>٣</span>المخفى، ويدخل فيه الإقلاب</div>
+              <div><span>٤</span>الساكن المظهر</div>
+              <div><span>٥</span>المتحرك</div>
+            </div>
+            <p style="margin-top:10px;color:var(--muted);font-size:15px">والواقع أن الغنة لا تبلغ درجة الكمال إلا في
+              المراتب الثلاث الأولى: المشدد والمدغم والمخفى. أما الساكن المظهر والمتحرك فالثابت فيهما أصل الغنة لا
+              كمالها. والمراد بالمدغم كامل التشديد هو ما وُضعت عليه شدة.</p>
+          </div>
+
+          <div class="note"><b>أين توجد الغنة في حالة الكمال؟</b><br>١. النون الساكنة والتنوين في الإدغام بغنة والإقلاب
+            والإخفاء.<br>٢. النون والميم المشددتان.<br>٣. الميم الساكنة في حالتي الإخفاء والإدغام.<br><br>والدليل على
+            ثبوت الغنة في الساكن المظهر والمتحرك أنه يتعذر النطق بالنون والميم إذا انسد مخرج الغنة وهو الخيشوم.</div>
+        </div>
+      </article>
+      <div class="verse" id="v-shadda">
+        <div class="vh"><b>البيت ١٧</b><span>متن التحفة ولآلئ البيان · ص ٧٢ و٧٣</span></div>
+        <p>في التحفة: يُظهر الغنة في كل ميم أو نون مشددة، ويسميها حرف غنة. وفي لآلئ البيان: يذكر كيفية النطق بالغنة
+          ومراتبها من الأقوى إلى الأضعف.</p>
+        <p class="q verse-poem">
+          وَغُنَّ مِيمًا ثُمَّ نُونًا شُدِّدَا ... وَسَمِّ كُلًّا حَرْفَ غُنَّةٍ بَدَا</p>
+      </div>
+
+    </section>
+
+    <!-- ============ الباب الثالث ============ -->
+    <section class="chap" id="meem">
+      <span class="num">الباب الثالث</span>
+      <h2>أحكام الميم الساكنة</h2>
+      <p class="lead">الميم الساكنة هي التي لا حركة لها. تقع قبل أحرف الهجاء جميعها ما عدا حروف المد الثلاثة، وذلك خشية
+        التقاء الساكنين وهو ما لا يمكن النطق به. ولها ثلاثة أحكام: الإخفاء، الإدغام، الإظهار.</p>
+
+      <!-- ===== الإخفاء الشفوي ===== -->
+      <article class="rule" id="m-ikhfa">
+        <header class="t-ikhfa">
+          <h3>الحكم الأول: الإخفاء الشفوي</h3>
+          <span class="tagline">بغنة</span>
+        </header>
+        <div class="body">
+          <dl>
+            <dt>حرفه (١)</dt>
+            <dd>
+              <div class="letters"><span class="lt t-ikhfa">ب</span></div>
+              <p style="margin-top:8px">إذا وقعت الباء بعد الميم الساكنة، ولا يكون ذلك إلا في كلمتين، جاز الإخفاء ويسمى
+                إخفاءً شفويًا، ولا بد معه من الغنة.</p>
+            </dd>
+            <dt>وجه التسمية</dt>
+            <dd><b>إخفاء:</b> لإخفاء الميم الساكنة عند ملاقاتها للباء، للتجانس بينهما فهما متحدان في المخرج ومشتركان في
+              أغلب الصفات، والإخفاء يؤدي إلى سهولة النطق. <b>شفوي:</b> لأن الميم والباء تخرجان من الشفتين.</dd>
+            <dt>القول المختار</dt>
+            <dd>هذا الحكم هو القول المختار لأهل الأداء. وذهب جماعة إلى الإظهار، لكنه خلاف الأولى، للإجماع على إخفائها
+              عند القلب (الإقلاب).</dd>
+          </dl>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>الحرف</th>
+                  <th>أمثلته</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="l t-ikhfa">ب</td>
+                  <td>
+                    <div class="ex"><span>يَعْتَصِمْ بِاللَّهِ<small class="ref">آل عمران ١٠١</small></span><span>وَهُمْ
+                        بِالْآخِرَةِ<small class="ref">الأعراف ٤٥</small></span><span>يَخْشَوْنَ رَبَّهُمْ
+                        بِالْغَيْبِ<small class="ref">الملك ١٢</small></span></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note"><b>تنبيه (من نهاية القول المفيد):</b> الإخفاء قسمان: إخفاء حركة، وإخفاء حرف.<br>
+            <b>إخفاء الحركة:</b> تبعيضها، كما في <span class="q">لَا تَأْمَنَّا</span> في سورة يوسف، ففيها لحفص روايتان:
+            الأولى <b>الروم</b> وهو الإتيان بثلث الحركة، والثانية <b>الإشمام</b> وهو ضم الشفتين بعد إسكان الحرف.
+            والمقصود هنا الرواية الأولى وهي الروم.<br>
+            <b>إخفاء الحرف:</b> نوعان. أحدهما تبعيض الحرف وستر ذاته في الجملة، كما في الميم الساكنة قبل الباء أصلية كانت
+            أو مقلوبة عن النون الساكنة أو التنوين. والثاني إعدام ذات الحرف بالكلية وإبقاء صفته وهي الغنة، وذلك في إخفاء
+            النون الساكنة والتنوين عند الحروف الخمسة عشر.
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== إدغام المتماثلين الصغير ===== -->
+      <article class="rule" id="m-idgham">
+        <header class="t-idgham">
+          <h3>الحكم الثاني: إدغام المتماثلين الصغير</h3>
+          <span class="tagline">بغنة</span>
+        </header>
+        <div class="body">
+          <dl>
+            <dt>حرفه (١)</dt>
+            <dd>
+              <div class="letters"><span class="lt t-idgham">م</span></div>
+              <p style="margin-top:8px">إذا وقعت الميم المتحركة بعد الميم الساكنة وجب الإدغام، ويسمى إدغام متماثلين
+                صغيرًا، ولا بد معه من الغنة أيضًا.</p>
+            </dd>
+            <dt>وجه التسمية</dt>
+            <dd><b>إدغام:</b> لإدغام الميم الساكنة في الميم المتحركة. <b>متماثلين:</b> لأنه مؤلف من حرفين متحدين في
+              المخرج والصفة أدغم الأول في الثاني. <b>صغير:</b> لأن الأول منهما ساكن والثاني متحرك، وهذا هو سبب الإدغام.
+            </dd>
+          </dl>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>الحرف</th>
+                  <th>أمثلته</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="l t-idgham">م</td>
+                  <td>
+                    <div class="ex"><span>إِنْ كُنْتُمْ مُؤْمِنِينَ<small class="ref">البقرة
+                          ٩١</small></span><span>وَلَهُمْ مَا يَشْتَهُونَ<small class="ref">النحل
+                          ٥٧</small></span><span>أَمْ مَنْ أَسَّسَ<small class="ref">التوبة ١٠٩</small></span></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note"><b>الفرق بين الصغير والكبير:</b> الإدغام الصغير لا يحتاج إلا إلى عمل واحد وهو إدخال الحرف
+            الساكن في المتحرك، فيصيران حرفًا واحدًا. أما الإدغام الكبير فيكون بين حرفين متحركين، وهو خاص برواية السوسي
+            عن أبي عمرو، ويحتاج إلى عمل إسكان الأول ثم إدغامه.</div>
+        </div>
+      </article>
+
+      <!-- ===== الإظهار الشفوي ===== -->
+      <article class="rule" id="m-izhar">
+        <header class="t-izhar">
+          <h3>الحكم الثالث: الإظهار الشفوي</h3>
+          <span class="tagline">بلا غنة</span>
+        </header>
+        <div class="body">
+          <dl>
+            <dt>حروفه (٢٦)</dt>
+            <dd>الحروف الباقية من أحرف الهجاء الثمانية والعشرين بعد إسقاط الباء والميم. إذا وقع حرف منها بعد الميم
+              الساكنة، في كلمة أو في كلمتين، وجب الإظهار ويسمى إظهارًا شفويًا.</dd>
+            <dt>وجه التسمية</dt>
+            <dd><b>إظهار:</b> لإظهار الميم الساكنة عند ملاقاتها للحروف الستة والعشرين. <b>شفوي:</b> لأن الميم الساكنة،
+              وهي الحرف المظهر، تخرج من الشفتين. ونُسب الإظهار إليها ولم ينسب إلى مخرج الحروف الستة والعشرين لأن هذه
+              الحروف لا تنحصر في مخرج معين: بعضها من الحلق وبعضها من اللسان وبعضها من الشفتين. وبخلاف ذلك الإظهار الحلقي
+              فقد نُسب إلى مخرج الحروف التي تظهر عندها النون والتنوين لانحصارها في الحلق.</dd>
+            <dt>سببه</dt>
+            <dd>بُعد مخرج الميم عن مخرج أكثر هذه الأحرف.</dd>
+          </dl>
+
+          <div class="note"><b>تنبيه على الواو والفاء:</b> عند وقوع الواو أو الفاء بعد الميم الساكنة يجب إظهار الميم
+            إظهارًا شفويًا شديدًا، حتى لا يتوهم إخفاؤها عندهما كما تخفى عند الباء. وذلك لاتحاد مخرج الميم مع الواو وقرب
+            مخرجها من الفاء.</div>
+
+          <div>
+            <p style="font-weight:600;font-size:15px;margin-bottom:8px">حروف الإظهار الشفوي قسمان</p>
+            <div class="sub">
+              <div>
+                <h4 style="color:var(--izhar)">القسم الأول: يقع بعد الميم من كلمتين فقط (٨ أحرف)</h4>
+                <div class="letters" style="margin-top:8px"><span class="lt t-izhar">ج</span><span
+                    class="lt t-izhar">خ</span><span class="lt t-izhar">ذ</span><span class="lt t-izhar">ص</span><span
+                    class="lt t-izhar">ظ</span><span class="lt t-izhar">غ</span><span class="lt t-izhar">ف</span><span
+                    class="lt t-izhar">ق</span></div>
+              </div>
+              <div>
+                <h4 style="color:var(--izhar)">القسم الثاني: يقع بعدها من كلمة ومن كلمتين (١٨ حرفًا)</h4>
+                <div class="letters" style="margin-top:8px"><span class="lt t-izhar">ء</span><span
+                    class="lt t-izhar">ت</span><span class="lt t-izhar">ث</span><span class="lt t-izhar">ح</span><span
+                    class="lt t-izhar">د</span><span class="lt t-izhar">ر</span><span class="lt t-izhar">ز</span><span
+                    class="lt t-izhar">س</span><span class="lt t-izhar">ش</span><span class="lt t-izhar">ض</span><span
+                    class="lt t-izhar">ط</span><span class="lt t-izhar">ع</span><span class="lt t-izhar">ك</span><span
+                    class="lt t-izhar">ل</span><span class="lt t-izhar">ن</span><span class="lt t-izhar">هـ</span><span
+                    class="lt t-izhar">و</span><span class="lt t-izhar">ي</span></div>
+              </div>
+            </div>
+          </div>
+
+          <h4 style="font-size:15px">أمثلة القسم الأول (من كلمتين)</h4>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>الحرف</th>
+                  <th>مثاله</th>
+                  <th>الحرف</th>
+                  <th>مثاله</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="l t-izhar">ج</td>
+                  <td><span class="q">وَيَجْعَلْ لَكُمْ جَنَّاتٍ</span><span class="ref">نوح ١٢</span></td>
+                  <td class="l t-izhar">خ</td>
+                  <td><span class="q">كُنْتُمْ خَيْرَ أُمَّةٍ</span><span class="ref">آل عمران ١١٠</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-izhar">ذ</td>
+                  <td><span class="q">وَاتَّبَعَتْهُمْ ذُرِّيَّتُهُمْ</span><span class="ref">الطور ٢١</span></td>
+                  <td class="l t-izhar">ص</td>
+                  <td><span class="q">إِنْ كُنْتُمْ صَادِقِينَ</span><span class="ref">البقرة ٢٣</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-izhar">ظ</td>
+                  <td><span class="q">وَأَنْتُمْ ظَالِمُونَ</span><span class="ref">البقرة ٥١</span></td>
+                  <td class="l t-izhar">غ</td>
+                  <td><span class="q">فَإِنَّهُمْ غَيْرُ مَلُومِينَ</span><span class="ref">المعارج ٣٠</span></td>
+                </tr>
+                <tr>
+                  <td class="l t-izhar">ف</td>
+                  <td><span class="q">ذَرَأَكُمْ فِي الْأَرْضِ</span><span class="ref">الملك ٢٤</span></td>
+                  <td class="l t-izhar">ق</td>
+                  <td><span class="q">بَلْ هُمْ قَوْمٌ يَعْدِلُونَ</span><span class="ref">النمل ٦٠</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4 style="font-size:15px">أمثلة من القسم الثاني</h4>
+          <div class="ex">
+            <span>الظَّمْآنُ<small class="ref">النور ٣٩ · همزة من كلمة</small></span>
+            <span>أَلَمْ أَعْهَدْ إِلَيْكُمْ<small class="ref">يس ٦٠ · همزة من كلمتين</small></span>
+            <span>دَارِكُمْ ثَلَاثَةَ أَيَّامٍ<small class="ref">هود ٦٥ · ثاء</small></span>
+            <span>لَكُمْ دِينُكُمْ<small class="ref">الكافرون ٦ · دال</small></span>
+            <span>أَيُّكُمْ زَادَتْهُ<small class="ref">التوبة ١٢٤ · زاي</small></span>
+          </div>
+        </div>
+      </article>
+
+      <div class="verse" id="v-meem">
+        <div class="vh"><b>الأبيات ١٨-٢٣</b><span>متن التحفة ولآلئ البيان · آخر باب الميم الساكنة بعد جدول
+            الأمثلة</span></div>
+        <p>يذكر البيتان أن للميم الساكنة ثلاثة أحكام: إخفاء عند الباء ويسمى شفويًا، وإدغام في مثلها ويسمى صغيرًا، وإظهار
+          عند بقية الحروف ويسمى شفويًا. ويحذر الجمزوري من إخفائها عند الواو والفاء لاتحاد المخرج مع الواو وقربه من
+          الفاء.</p>
+        <p class="q verse-poem">
+          وَالْمِيمُ إِنْ تَسْكُنْ تَجِي قَبْلَ الْهِجَا ... لَا أَلِفٍ لَيِّنَةٍ لِذِي الْحِجَا<br>أَحْكَامُهَا
+          ثَلَاثَةٌ لِمَنْ ضَبَطْ ... إِخْفَاءٌ اِدْغَامٌ وَإِظْهَارٌ فَقَطْ<br>فَالْأَوَّلُ الْإِخْفَاءُ عِنْدَ
+          الْبَاءِ ... وَسَمِّهِ الشَّفْوِيَّ لِلْقُرَّاءِ<br>وَالثَّانِي إِدْغَامٌ بِمِثْلِهَا أَتَى ... وَسَمِّ
+          إدْغَامًا صَغِيرًا يَا فَتَى<br>وَالثَّالِثُ الْإِظْهَارُ فِي الْبَقِيَّةْ ... مِنْ أَحْرُفٍ وَسَمِّهَا
+          شَفْوِيَّةْ<br>وَاحْذَرْ لَدَى وَاوٍ وَفَا أَنْ تَخْتَفِي ... لِقُرْبِهَا وَلِاتِّحَادِ فَاعْرِفِ</p>
+      </div>
+    </section>
+
+    <!-- ============ جدول المراجعة ============ -->
+    <section class="chap" id="compare">
+      <span class="num">للمراجعة</span>
+      <h2>جدول المقارنة</h2>
+      <div class="tw solo">
+        <table>
+          <thead>
+            <tr>
+              <th>الحكم</th>
+              <th>الحروف</th>
+              <th>الغنة</th>
+              <th>الخلاصة</th>
+              <th>مثال</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="pill t-izhar">إظهار حلقي</span></td>
+              <td>ء هـ ع ح غ خ</td>
+              <td>غير كاملة</td>
+              <td>نطق واضح من المخرج بلا سكت</td>
+              <td><span class="q">مِنْ هَادٍ</span></td>
+            </tr>
+            <tr>
+              <td><span class="pill t-idgham">إدغام بغنة</span></td>
+              <td>ي ن م و</td>
+              <td>نعم</td>
+              <td>تشديد مع بقاء الغنة، من كلمتين</td>
+              <td><span class="q">مَنْ يَقُولُ</span></td>
+            </tr>
+            <tr>
+              <td><span class="pill t-idgham">إدغام بغير غنة</span></td>
+              <td>ل ر</td>
+              <td>لا</td>
+              <td>تشديد كامل، من كلمتين</td>
+              <td><span class="q">مِنْ رَبِّهِمْ</span></td>
+            </tr>
+            <tr>
+              <td><span class="pill t-iqlab">إقلاب</span></td>
+              <td>ب</td>
+              <td>نعم</td>
+              <td>قلب ميم مخفاة بغنة</td>
+              <td><span class="q">مِنْ بَعْدِ</span></td>
+            </tr>
+            <tr>
+              <td><span class="pill t-ikhfa">إخفاء حقيقي</span></td>
+              <td>١٥ حرفًا</td>
+              <td>نعم</td>
+              <td>بين الإظهار والإدغام، بلا تشديد</td>
+              <td><span class="q">مِنْ قَبْلِ</span></td>
+            </tr>
+            <tr>
+              <td><span class="pill t-idgham">نون وميم مشددتان</span></td>
+              <td>نّ ، مّ</td>
+              <td>نعم، حركتان</td>
+              <td>غنة واجبة</td>
+              <td><span class="q">إِنَّ · ثُمَّ</span></td>
+            </tr>
+            <tr>
+              <td><span class="pill t-ikhfa">إخفاء شفوي</span></td>
+              <td>ب</td>
+              <td>نعم</td>
+              <td>الميم الساكنة قبل الباء</td>
+              <td><span class="q">يَعْتَصِمْ بِاللَّهِ</span></td>
+            </tr>
+            <tr>
+              <td><span class="pill t-idgham">إدغام شفوي</span></td>
+              <td>م</td>
+              <td>نعم</td>
+              <td>ميم ساكنة تدغم في ميم</td>
+              <td><span class="q">لَهُمْ مَا</span></td>
+            </tr>
+            <tr>
+              <td><span class="pill t-izhar">إظهار شفوي</span></td>
+              <td>باقي الحروف</td>
+              <td>لا</td>
+              <td>الميم واضحة</td>
+              <td><span class="q">هُمْ فِيهَا</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <footer>
+        <div
+          style="margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-weight:600;color:var(--accent)">
+          Ahmed Mansour &copy; 2026</div>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var R = {
+        izhar: { n: 'إظهار حلقي', t: 'نطق واضح من المخرج بلا غنة كاملة', e: 'مِنْ هَادٍ', c: 't-izhar' },
+        idgN: { n: 'إدغام بغنة', t: 'تدغم النون في الحرف وتبقى الغنة، بشرط أن يكون الحرف في كلمة تالية، وإلا وجب الإظهار المطلق', e: 'مَنْ يَقُولُ', c: 't-idgham' },
+        idgL: { n: 'إدغام بغير غنة', t: 'تدغم النون إدغامًا كاملًا بلا غنة، بشرط أن يكون الحرف في كلمة تالية', e: 'مِنْ رَبِّهِمْ', c: 't-idgham' },
+        iqlab: { n: 'إقلاب', t: 'تقلب النون ميمًا مخفاة بغنة', e: 'مِنْ بَعْدِ', c: 't-iqlab' },
+        ikhfa: { n: 'إخفاء حقيقي', t: 'نطق بين الإظهار والإدغام بغنة من غير تشديد', e: 'مِنْ قَبْلِ', c: 't-ikhfa' }
+      };
+      var cls = { izhar: 'izhar', idgN: 'idgham', idgL: 'idgham', iqlab: 'iqlab', ikhfa: 'ikhfa' };
+      var map = {
+        'ء': 'izhar', 'هـ': 'izhar', 'ع': 'izhar', 'ح': 'izhar', 'غ': 'izhar', 'خ': 'izhar',
+        'ي': 'idgN', 'ن': 'idgN', 'م': 'idgN', 'و': 'idgN', 'ل': 'idgL', 'ر': 'idgL',
+        'ب': 'iqlab',
+        'ت': 'ikhfa', 'ث': 'ikhfa', 'ج': 'ikhfa', 'د': 'ikhfa', 'ذ': 'ikhfa', 'ز': 'ikhfa', 'س': 'ikhfa', 'ش': 'ikhfa',
+        'ص': 'ikhfa', 'ض': 'ikhfa', 'ط': 'ikhfa', 'ظ': 'ikhfa', 'ف': 'ikhfa', 'ق': 'ikhfa', 'ك': 'ikhfa'
+      };
+      var order = ['ء', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'هـ', 'و', 'ي'];
+      var grid = document.getElementById('grid'), ans = document.getElementById('answer');
+      function show(l) {
+        var r = R[map[l]], btns = grid.children;
+        for (var i = 0; i < btns.length; i++) btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-l') === l ? 'true' : 'false');
+        ans.innerHTML = '';
+        var big = document.createElement('div'); big.className = 'big ' + r.c; big.textContent = l;
+        var pill = document.createElement('span'); pill.className = 'pill ' + r.c; pill.textContent = r.n;
+        var txt = document.createElement('span'); txt.textContent = r.t + '. ';
+        var ex = document.createElement('span'); ex.className = 'q'; ex.textContent = r.e;
+        ans.appendChild(big); ans.appendChild(pill); ans.appendChild(txt); ans.appendChild(ex);
+      }
+      order.forEach(function (l) {
+        var b = document.createElement('button'); b.type = 'button'; b.textContent = l; b.setAttribute('data-l', l);
+        b.className = cls[map[l]]; b.setAttribute('aria-pressed', 'false');
+        b.addEventListener('click', function () { show(l); });
+        grid.appendChild(b);
+      });
+      show('ب');
+    })();
+
+    (function () {
+      var tas = document.querySelectorAll('.verse textarea');
+      for (var i = 0; i < tas.length; i++) {
+        (function (t) {
+          var key = 'verse-' + t.getAttribute('data-k');
+          try { var v = localStorage.getItem(key); if (v) t.value = v; } catch (e) { }
+          t.addEventListener('input', function () { try { localStorage.setItem(key, t.value); } catch (e) { } });
+        })(tas[i]);
+      }
+    })();
+  </script>
+
+</body>
+
+</html>
